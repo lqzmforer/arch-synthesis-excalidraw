@@ -2,8 +2,8 @@
   "$schema": "https://json.schemastore.org/claude-code-plugin.json",
   "name": "arch-synthesis-excalidraw",
   "displayName": "Architecture Synthesis to Excalidraw",
-  "version": "0.1.0",
-  "description": "Synthesize research notes, ADRs, brainstorming outputs, and documentation into editable Excalidraw architecture diagrams. Treats the repository as a knowledge corpus by default, with source code as optional supporting evidence.",
+  "version": "0.2.0",
+  "description": "Synthesize research notes, ADRs, brainstorming outputs, and documentation into editable Excalidraw architecture diagrams. Optimized for knowledge-first architecture synthesis, top-level relationship clarity, semantic color systems, and optional render-validate review.",
   "author": {
     "name": "Rocky"
   },
@@ -14,7 +14,9 @@
     "c4",
     "control-plane",
     "ai-agent-platform",
-    "knowledge-repo"
+    "knowledge-repo",
+    "renderer",
+    "visual-design"
   ],
   "license": "MIT",
   "skills": "skills/",

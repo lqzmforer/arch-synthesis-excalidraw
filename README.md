@@ -24,6 +24,9 @@ In other words: don't make the model cosplay as a compiler when what you really 
 - synthesizing inputs into an **Architecture Brief**
 - producing a **Scene Plan** before drawing
 - generating **editable Excalidraw-ready output**
+- enforcing a **top-level-arrow budget** so diagrams stop looking like noodle bowls
+- using a **semantic color palette** instead of accidental rainbow architecture
+- optionally running a **render → review → revise** loop for visual QA
 - separating **facts, assumptions, and open questions**
 - defaulting to **information repos first**, with code as optional supporting evidence
 
@@ -176,9 +179,24 @@ For AI platform work, `control-plane-vs-data-plane` is the default favorite for 
 
 ### Skill assets
 
-- **references/** — visual semantics, diagram modes, Excalidraw schema notes
+- **references/** — semantic palette, visual rules, element templates, renderer assets, diagram modes, Excalidraw schema notes
 - **templates/** — architecture brief, scene plan, input packet
 - **examples/** — a ready sample for control-plane vs data-plane use cases
+
+## Visual design model
+
+Version `0.2.0` shifts the plugin toward a stricter review-friendly architecture style:
+
+- arrows are limited to **top-level module relationships** by default
+- internal details should be shown through grouping, alignment, notes, and selective internals
+- colors come from a **semantic palette** with consistent fill/stroke pairs
+- the plugin can optionally run a **render and validate** loop using Playwright
+
+This keeps the plugin's knowledge-synthesis brain while borrowing a stronger visual discipline from the broader Excalidraw skill ecosystem.
+
+## Credits
+
+The renderer asset pattern, palette centralization idea, and reusable element-template approach were influenced by [coleam00/excalidraw-diagram-skill](https://github.com/coleam00/excalidraw-diagram-skill). This repository does **not** replace the knowledge-repo-first synthesis flow with that project wholesale; it selectively adopts the visual-system pieces that improve clarity.
 
 ## Example workflow
 
@@ -209,8 +227,9 @@ You can adapt the plugin without changing the core workflow.
 
 Most useful files to edit:
 
-- `plugins/arch-synthesis-excalidraw/skills/architecture-synthesis-excalidraw/references/ai-agent-platform-semantics.md`
+- `plugins/arch-synthesis-excalidraw/skills/architecture-synthesis-excalidraw/references/color-palette.md`
 - `plugins/arch-synthesis-excalidraw/skills/architecture-synthesis-excalidraw/references/visual-best-practices.md`
+- `plugins/arch-synthesis-excalidraw/skills/architecture-synthesis-excalidraw/references/element-templates.md`
 - `plugins/arch-synthesis-excalidraw/skills/architecture-synthesis-excalidraw/references/diagram-modes.md`
 - `plugins/arch-synthesis-excalidraw/commands/arch-whiteboard.md`
 
