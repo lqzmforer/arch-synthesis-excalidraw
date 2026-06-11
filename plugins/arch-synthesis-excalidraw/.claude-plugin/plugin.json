@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-plugin.json",
+  "name": "arch-synthesis-excalidraw",
+  "displayName": "Architecture Synthesis to Excalidraw",
+  "version": "0.1.0",
+  "description": "Synthesize research notes, ADRs, brainstorming outputs, and documentation into editable Excalidraw architecture diagrams. Treats the repository as a knowledge corpus by default, with source code as optional supporting evidence.",
+  "author": {
+    "name": "Rocky"
+  },
+  "keywords": [
+    "architecture",
+    "excalidraw",
+    "diagram",
+    "c4",
+    "control-plane",
+    "ai-agent-platform",
+    "knowledge-repo"
+  ],
+  "license": "MIT",
+  "skills": "skills/",
+  "commands": "commands/",
+  "hooks": "hooks/hooks.json"
+}

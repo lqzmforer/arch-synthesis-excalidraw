@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-marketplace.json",
+  "name": "arch-synthesis-excalidraw",
+  "owner": {
+    "name": "Rocky"
+  },
+  "description": "Claude Code plugin marketplace for synthesizing research, ADRs, brainstorming notes, and knowledge repositories into editable Excalidraw architecture diagrams.",
+  "plugins": [
+    {
+      "name": "arch-synthesis-excalidraw",
+      "source": "./plugins/arch-synthesis-excalidraw",
+      "description": "Turn knowledge-repo inputs (docs, ADRs, research, brainstorm) into Excalidraw architecture diagrams. Knowledge-repo first, codebase optional.",
+      "version": "0.1.0",
+      "keywords": ["architecture", "excalidraw", "diagram", "c4", "ai-agent-platform"]
+    }
+  ]
+}

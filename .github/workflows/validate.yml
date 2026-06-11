@@ -1,0 +1,39 @@
+name: Validate plugin
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Validate marketplace.json is valid JSON
+        run: |
+          python3 -c "import json; json.load(open('.claude-plugin/marketplace.json'))"
+
+      - name: Validate plugin.json is valid JSON
+        run: |
+          python3 -c "import json; json.load(open('plugins/arch-synthesis-excalidraw/.claude-plugin/plugin.json'))"
+
+      - name: Validate hooks.json is valid JSON
+        run: |
+          python3 -c "import json; json.load(open('plugins/arch-synthesis-excalidraw/hooks/hooks.json'))"
+
+      - name: Check hook scripts are executable
+        run: |
+          test -x plugins/arch-synthesis-excalidraw/hooks/block-rm.sh
+          test -x plugins/arch-synthesis-excalidraw/hooks/post-edit-check.sh
+
+      - name: Check SKILL.md exists
+        run: |
+          test -f plugins/arch-synthesis-excalidraw/skills/architecture-synthesis-excalidraw/SKILL.md
+
+      - name: Check command files exist
+        run: |
+          test -f plugins/arch-synthesis-excalidraw/commands/arch-whiteboard.md
+          test -f plugins/arch-synthesis-excalidraw/commands/init-arch-project.md
